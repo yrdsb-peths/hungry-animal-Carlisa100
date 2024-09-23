@@ -21,6 +21,7 @@ public class Bear extends Actor
             removeTouching(Cherry.class);
             MyWorld world = (MyWorld) getWorld();
             world.createCherry();
+            world.increaseScore();
         }
     }
 }

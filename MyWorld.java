@@ -16,6 +16,12 @@ public class MyWorld extends World
         createCherry();
     }
     
+    public void gameOver()
+    {
+        Label gameOverLabel = new Label ("Game Over!", 100);
+        addObject(gameOverLabel, 300, 200);
+    }
+    
     public void createCherry()
     {
         Cherry cherry = new Cherry();
