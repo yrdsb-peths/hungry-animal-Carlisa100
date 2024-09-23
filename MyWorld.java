@@ -8,7 +8,17 @@ public class MyWorld extends World
         Bear bear = new Bear();
         addObject(bear, 300, 300);
         
+        Label scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 20, 20);
+        
+        createCherry();
+    }
+    
+    public void createCherry()
+    {
         Cherry cherry = new Cherry();
-        addObject(cherry, 300, 0);
+        int x = Greenfoot.getRandomNumber(600);
+        int y = 0;
+        addObject(cherry, x, y);
     }
 }
