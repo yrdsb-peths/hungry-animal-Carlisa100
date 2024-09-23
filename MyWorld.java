@@ -9,6 +9,6 @@ public class MyWorld extends World
         addObject(bear, 300, 300);
         
         Cherry cherry = new Cherry();
-        addObject(cherry, 300, 100);
+        addObject(cherry, 300, 0);
     }
 }
