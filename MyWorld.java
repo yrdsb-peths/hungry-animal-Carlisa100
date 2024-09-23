@@ -6,7 +6,7 @@ public class MyWorld extends World
     Label scoreLabel; 
     public MyWorld()
     {    
-        super(600, 400, 1);
+        super(600, 400, 1, false);
         Bear bear = new Bear();
         addObject(bear, 300, 300);
         
