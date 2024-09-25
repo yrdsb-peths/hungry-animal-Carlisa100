@@ -2,6 +2,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Bear extends Actor
 {
+    GreenfootSound bearSound = new GreenfootSound("bear-roar.mp3"); 
+    GreenfootImage idle = new GreenfootImage("downloads/Elephant Sprite/ tile000"); 
+    
+    public Elephant()
+    {
+        for(int i = 0; i < idle.length; i++)
+        {
+            idle[i] = new GreenfootImage("downloads/Elephant Sprite/ tile000" + i + ".png"); 
+        }
+        setImage(idle[0]); 
+    }
+    
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("left"))
