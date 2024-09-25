@@ -2,10 +2,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Cherry extends Actor
 {
+    private int speed = 1;
     public void act()
     {
         int x = getX();
-        int y = getY() + 2;
+        int y = getY() + speed;
         setLocation(x, y);
         
         MyWorld world = (MyWorld) getWorld();
@@ -14,5 +15,10 @@ public class Cherry extends Actor
             world.gameOver();
             world.removeObject(this);
         }
+    }
+    
+    public void setSpeed(int spd)
+    {
+        speed = spd; 
     }
 }
