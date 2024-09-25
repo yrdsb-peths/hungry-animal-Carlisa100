@@ -14,7 +14,7 @@ public class MyWorld extends World
         addObject(bear, 300, 300);
         
         scoreLabel = new Label(0, 80);
-        addObject(scoreLabel, 20, 30);
+        addObject(scoreLabel, 40, 30);
         
         spawnFood();
     }
@@ -41,7 +41,16 @@ public class MyWorld extends World
     {
         score++;
         scoreLabel.setValue(score);
-        
+    }
+    
+    public void increaseScore20()
+    {
+        score = score + 20; 
+        scoreLabel.setValue(score);
+    }
+
+    public void level()
+    {
         if(score % 5 == 0)
         {
             level += 1;

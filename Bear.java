@@ -54,12 +54,12 @@ public class Bear extends Actor
     {
         if(Greenfoot.isKeyDown("left"))
         {
-            move(-2);
+            move(-4);
             facing = "left";
         }
         else if(Greenfoot.isKeyDown("right"))
         {
-            move(2);
+            move(4);
             facing = "right";
         }
         
@@ -75,10 +75,26 @@ public class Bear extends Actor
             Food food = (Food) actor;
             MyWorld world = (MyWorld) getWorld();
             
-            world.increaseScore();
+            increaseScore();
             getWorld().removeObject(food);
             world.spawnFood();
         }
         
+    }
+    
+    public void increaseScore()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        
+        if(isTouching(Apple.class))
+        {
+            world.increaseScore();
+            world.level();
+        }
+        else
+        {
+            world.increaseScore20();
+            world.level();
+        }
     }
 }
