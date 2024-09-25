@@ -5,8 +5,8 @@ public class Cherry extends Actor
     public void act()
     {
         int x = getX();
-        int y = getY();
-        setLocation(x, y );
+        int y = getY() + 2;
+        setLocation(x, y);
         
         MyWorld world = (MyWorld) getWorld();
         if(getY() >= world.getHeight())

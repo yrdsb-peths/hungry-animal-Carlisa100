@@ -9,7 +9,7 @@ public class Bear extends Actor
     String facing = "right"; 
     
     SimpleTimer animationTimer = new SimpleTimer();
-    public void Elephant()
+    public Bear()
     {
         for(int i = 0; i < idleRight.length; i++)
         {
@@ -69,7 +69,7 @@ public class Bear extends Actor
     }
     
     public void eat()
-    {
+    { 
         if(isTouching(Cherry.class))
         {
             removeTouching(Cherry.class);
