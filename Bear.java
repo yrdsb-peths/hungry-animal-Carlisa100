@@ -5,29 +5,38 @@ public class Bear extends Actor
     GreenfootSound bearSound = new GreenfootSound("bearroar.mp3.mp3"); 
     GreenfootImage[] idleRight = new GreenfootImage[8]; 
     GreenfootImage[] idleLeft = new GreenfootImage[8]; 
-
     
     String facing = "right"; 
-    public void Elephant()
+    
+    SimpleTimer animationTimer = new SimpleTimer();
+    public Bear()
     {
         for(int i = 0; i < idleRight.length; i++)
         {
-            idleRight[i] = new GreenfootImage("Downloads/Elephant Sprite/tile000" + i + ".png");
+            idleRight[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png" );
             idleRight[i].scale(100, 100);
         }
         
         for(int i = 0; i < idleLeft.length; i++)
         {
-            idleLeft[i] = new GreenfootImage("Downloads/Elephant Sprite/tile000" + i + ".png");
+            idleLeft[i] = new GreenfootImage("images/elephant_idle/idle" + i + ".png");
             idleLeft[i].mirrorHorizontally(); 
             idleLeft[i].scale(100, 100);
         }
         setImage(idleRight[0]); 
+        
+        animationTimer.mark();
     }
     
     int imageIndex = 0;
     public void animateElephant()
     {
+        if(animationTimer.millisElapsed() < 50)
+        {
+            return;
+        }
+        animationTimer.mark();
+        
         if(facing.equals("right"))
         {
             setImage(idleRight[imageIndex]);
@@ -60,7 +69,7 @@ public class Bear extends Actor
     }
     
     public void eat()
-    {
+    { 
         if(isTouching(Cherry.class))
         {
             removeTouching(Cherry.class);
