@@ -2,9 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Bear extends Actor
 {
-<<<<<<< Updated upstream
-=======
-    GreenfootSound bearSound = new GreenfootSound("bear-roar.mp3"); 
+    GreenfootSound bearSound = new GreenfootSound("bearroar.mp3.mp3"); 
     GreenfootImage[] idle = new GreenfootImage[8]; 
     
     public void Elephant()
@@ -20,10 +18,9 @@ public class Bear extends Actor
     public void animateElephant()
     {
         setImage(idle[imageIndex]);
-        imageIndex = imageIndex + 1 % idle.length; 
+        imageIndex = (imageIndex +1) % idle.length; 
     }
     
->>>>>>> Stashed changes
     public void act()
     {
         if(Greenfoot.isKeyDown("left"))
