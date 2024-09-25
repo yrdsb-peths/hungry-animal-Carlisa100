@@ -63,19 +63,22 @@ public class Bear extends Actor
             facing = "right";
         }
         
-        eat();
+        checkFoodCollision();
         
         animateElephant(); 
     }
     
-    public void eat()
-    { 
-        if(isTouching(Cherry.class))
-        {
-            removeTouching(Cherry.class);
+    public void checkFoodCollision()
+    {
+        Actor actor = getOneIntersectingObject(Food.class); // Might be null
+        if(actor != null) {
+            Food food = (Food) actor;
             MyWorld world = (MyWorld) getWorld();
-            world.createCherry();
+            
             world.increaseScore();
+            getWorld().removeObject(food);
+            world.spawnFood();
         }
+        
     }
 }

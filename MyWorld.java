@@ -16,7 +16,7 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 20, 30);
         
-        createCherry();
+        spawnFood();
     }
     
     public void gameOver()
@@ -25,12 +25,16 @@ public class MyWorld extends World
         addObject(gameOverLabel, 300, 200);
     }
     
-    public void createCherry()
-    {
-        Cherry cherry = new Cherry();
+    public void spawnFood() {
+        int rand = Greenfoot.getRandomNumber(2);
+        Food food;
+        if(rand == 0) {
+            food = new Apple();
+        } else {
+            food = new Cherry();
+        }
         int x = Greenfoot.getRandomNumber(600);
-        int y = 0;
-        addObject(cherry, x, y);
+        addObject(food, x, 0);
     }
     
     public void increaseScore()
@@ -42,14 +46,5 @@ public class MyWorld extends World
         {
             level += 1;
         }
-    }
-    
-    public void spawnCherry()
-    {
-        Cherry cherry = new Cherry();
-        cherry.setSpeed(level);
-        int x = Greenfoot.getRandomNumber(getWidth());
-        int y = 0; 
-        addObject(cherry, x, y); 
     }
 }
